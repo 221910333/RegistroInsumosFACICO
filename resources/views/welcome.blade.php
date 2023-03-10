@@ -7,16 +7,20 @@
                     @auth
                         <a href="{{ url('/home') }}" class="btn btn-dark">Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="btn btn-dark">Log in</a>
+                        <br><a href="{{ route('login') }}" class="btn btn-success">Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn btn-dark">Register</a>
+                            <a href="{{ route('register') }}" class="btn btn-outline-success">Register</a>
                         @endif
                     @endauth
                 </div>
             @endif
-
-            
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          
         <div class="col-sm-12 col-md-6 col-lg-8 col-xl-3 rounded-top rounded-bottom shadow-lg mb-3">
             <div class="card mb-3 border-0">
                 <div class="card-image text-center my-3">
@@ -25,33 +29,33 @@
 
                 <div class="text-center" overflow-x: auto>
                     <div>
-                        <span class="badge badge-info w-100 bg-dark p-2 mb-2">
+                        <span class="badge badge-info w-100 bg-success p-2 mb-2">
                             <h6 class="text-white fw-bold m-0">Información Personal</h6>
                         </span>
                         <p>
-                            <span class="fw-bold text-danger">Nombre -</span>
+                            <span class="fw-bold text-success">Nombre -</span>
                             
                         </p>
                         <p>
-                            <span class="fw-bold text-danger">Correo -</span>
+                            <span class="fw-bold text-success">Correo -</span>
                             
                         </p>
                     </div>
                     <div>
-                        <span class="badge badge-info w-100 bg-dark p-2 mb-2">
+                        <span class="badge badge-info w-100 bg-success p-2 mb-2">
                             <h6 class="text-white fw-bold m-0">Datos del usuario</h6>
                         </span>
                         <p>
-                            <span class="fw-bold text-danger">Usuario -</span>
+                            <span class="fw-bold text-success">Usuario -</span>
                             
                         </p>
                         <p>
-                            <span class="fw-bold text-danger">Puesto -</span>
+                            <span class="fw-bold text-success">Puesto -</span>
                            
                         </p>
                     </div>
                     <div>
-                        <span class="badge badge-info w-100 bg-dark p-2 mb-2">
+                        <span class="badge badge-info w-100 bg-success p-2 mb-2">
                             <h6 class="text-white fw-bold m-0">Actualizar Contraseña</h6>
                         </span>
                         <form action="#" class="p-3" method="POST">
@@ -76,7 +80,7 @@
                             <hr>
 
                             <div class="form-group">
-                                <button class="btn btn-dark btn-sm w-100">Cambiar Contraseña</button>
+                                <button class="btn btn-outline-warning">Cambiar Contraseña</button>
                             </div>
                         </form>
                     </div>
@@ -90,7 +94,7 @@
                     <img src="{{ asset('img/assets/corporate_default.png') }}" alt="corporate" class="img-fluid w-25">
                 </div>
                 <div class="container h-100">
-                    <span class="badge badge-info w-100 bg-dark p-2 mb-2">
+                    <span class="badge badge-info w-100 bg-warning p-2 mb-2">
                         <h6 class="text-white fw-bold m-0">Informacion de la empresa</h6>
                     </span>
 
@@ -128,7 +132,7 @@
                         <hr>
                         
                         <div class="mt-3">
-                            <input type="submit" value="Guardar Cambios" class="btn btn-sm d-block w-100 btn-dark">
+                            <input type="submit" value="Guardar Cambios" class="btn btn-sm d-block w-100 btn-warning">
                         </div>
                         
                     </form>
