@@ -7,11 +7,7 @@
                     @auth
                         <a href="{{ url('/home') }}" class="btn btn-dark">Home</a>
                     @else
-                        <br><a href="{{ route('login') }}" class="btn btn-success">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn btn-outline-success">Register</a>
-                        @endif
+                        
                     @endauth
                 </div>
             @endif
@@ -24,78 +20,78 @@
         <div class="col-sm-12 col-md-6 col-lg-8 col-xl-3 rounded-top rounded-bottom shadow-lg mb-3">
             <div class="card mb-3 border-0">
                 <div class="card-image text-center my-3">
-                    <img src="{{ asset('img/assets/user_default.png') }}" alt="user" class="img-fluid w-25">
+                   <img src="{{ asset('img/assets/user_default.png') }}" alt="user" class="img-fluid w-25" > 
                 </div>
 
                 <div class="text-center" overflow-x: auto>
                     <div>
-                        <span class="badge badge-info w-100 bg-success p-2 mb-2">
+                        <span class="badge badge-info w-100 bg-verde p-2 mb-2">
                             <h6 class="text-white fw-bold m-0">Información Personal</h6>
                         </span>
                         <p>
-                            <span class="fw-bold text-success">Nombre -</span>
+                            <span class="fw-bold text-verde">Nombre -</span>
                             
                         </p>
                         <p>
-                            <span class="fw-bold text-success">Correo -</span>
-                            
+                            <span class="fw-bold text-verde">Numero de Cuenta -</span>
+                        </p>
+                        <p>
+                            <span class="fw-bold text-verde">Aula -</span>
+                        </p>
+                        <p>
+                            <span class="fw-bold text-verde">Teléfono -</span>
+                        </p>
+                        <p>
+                            <span class="fw-bold text-verde">Unidad De Aprendizaje -</span>
+                        </p>
+                        <p>
+                            <span class="fw-bold text-verde">Profesor -</span>
+                        </p>
+                        <p>
+                            <span class="fw-bold text-verde">Licenciatura -</span>
                         </p>
                     </div>
                     <div>
-                        <span class="badge badge-info w-100 bg-success p-2 mb-2">
-                            <h6 class="text-white fw-bold m-0">Datos del usuario</h6>
+                        <span class="badge badge-info w-100 bg-verde p-2 mb-2">
+                            <h6 class="text-white fw-bold m-0">Datos del Insumo</h6>
                         </span>
                         <p>
-                            <span class="fw-bold text-success">Usuario -</span>
+                            <span class="fw-bold text-verde">Insumo -</span>
                             
                         </p>
                         <p>
-                            <span class="fw-bold text-success">Puesto -</span>
+                            <span class="fw-bold text-verde">Numero de Insumo -</span>
                            
                         </p>
-                    </div>
-                    <div>
-                        <span class="badge badge-info w-100 bg-success p-2 mb-2">
-                            <h6 class="text-white fw-bold m-0">Actualizar Contraseña</h6>
-                        </span>
-                        <form action="#" class="p-3" method="POST">
-                            @csrf
-                            @method('PUT')
-                            <div class="form-group my-2">
-                                <label>Contraseña Actual</label>
-                                <input type="password" class="form-control" name="password" id="password">
-                            </div>
-                            <div class="form-group my-2">
-                                <label>Nueva Contraseña</label>
-                                <input type="password" class="form-control" name="newpassword" id="newpassword">
-                            </div>
-                            <div class="form-group my-2">
-                                <label>Repetir Nueva Contraseña</label>
-                                <input type="password" class="form-control" name="confirmpassword" id="confirmpassword">
-                                <div class="text-danger d-none" id="passwordmessage">
-                                    Las contraseñas no coinciden
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="form-group">
-                                <button class="btn btn-outline-warning">Cambiar Contraseña</button>
-                            </div>
-                        </form>
+                        <p>
+                            <span class="fw-bold text-verde">Fecha Solicitud y Hora -</span>
+                        </p>
+                        <p>
+                            <span class="fw-bold text-verde">Fecha de Entrega y Hora -</span>
+                        </p>
                     </div>
                 </div>
+                <div>
+                    <span class="badge badge-info w-100 btn-danger p-2 mb-2">
+                        <h6 class="text-white fw-bold m-0">
+                            <strong>NOTA: </strong>
+                        </h6><br>
+                        <p>Si no entrega el insumo en el día y hora indicada, <br>
+                            será acreedor a una multa de $20 pesos diarios</p>
+                    </span>
+                </div>
             </div>
+
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-6 rounded-top rounded-bottom shadow-lg">
             <div class="card mb-3 border-0 h-100">
                 <div class="card-image text-center">
-                    <img src="{{ asset('img/assets/corporate_default.png') }}" alt="corporate" class="img-fluid w-25">
+                    <a href="{{ route('login') }}"> <img src="{{ asset('img/assets/corporate_default.png') }}" alt="corporate" class="img-fluid w-25"></a>
                 </div>
                 <div class="container h-100">
-                    <span class="badge badge-info w-100 bg-warning p-2 mb-2">
-                        <h6 class="text-white fw-bold m-0">Informacion de la empresa</h6>
+                    <span class="badge badge-info w-100 btn-amarillo p-2 mb-2">
+                        <h6 class="text-white fw-bold m-0">Solicitud De Prestamo de Insumo Informático</h6>
                     </span>
 
                    
@@ -103,19 +99,23 @@
                         @csrf
                         <div class="row py-2">
                             <div class="col-sm-12 col-lg-6">
-                                <label class="mb-2"> <i class="bi bi-briefcase-fill"></i> Nombre</label>
+                                <label class="mb-2"> <i class="bi bi-briefcase-fill"></i> Nombre del Solicitante</label>
                                 <input type="text" name="name" class="form-control text-center" id="nombre" placeholder="Nombre" value="">
                             </div>
 
                             <div class="col-sm-12 col-lg-6">
-                                <label class="mb-2"> <i class="bi bi-building"></i> Razon Social</label>
-                                <input type="text" name="business_name" class="form-control text-center" id="razon" onkeypress="return soloLetras(event)" placeholder="Razon Social" value="">
+                                <label class="mb-2"> <i class="bi bi-building"></i> Numero de cuenta</label>
+                                <input type="number" name="business_name" class="form-control text-center" id="razon" onkeypress="return soloLetras(event)" placeholder="Razon Social" value="">
                             </div>
                         </div>
 
                         <div class="form-group py-2">
-                            <label class="mb-2"> <i class="bi bi-geo-alt-fill"></i> Direccion</label>
-                            <input name="address" type="text" id="address" class="form-control text-center" id="direccion" laceholder="Direccion de empresa" value="">
+                            <label class="mb-2"> <i class="bi bi-geo-alt-fill"></i> Aula</label>
+                            <select name="aula" id="">
+                                <option value="">A1</option>
+                                <option value="">A2</option>
+                                <option value="">A2</option>
+                            </select>
                         </div>
 
                         <div class="row py-2">
@@ -125,14 +125,64 @@
                             </div>
 
                             <div class="col-sm-12 col-lg-6">
-                                <label class="mb-2"> <i class="bi bi-envelope-fill"></i> Correo</label>
+                                <label class="mb-2"> <i class="bi bi-envelope-fill"></i> unidad de Aprendizaje</label>
                                 <input type="text" name="email" class="form-control text-center" id="email" placeholder="Correo electronico" value="">
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label class="mb-2"> <i class="bi bi-envelope-fill"></i> Profesor</label>
+                                <input type="text" name="email" class="form-control text-center" id="email" placeholder="Correo electronico" value="">
+                            </div>
+                            <div class="row py-2">
+                                <div class="col-sm-12 col-lg-6">
+                                    <label class="mb-2"> <i class="bi bi-briefcase-fill"></i> Licenciatura</label>
+                                    <select name="" id="">
+                                        <option value="LPS">LPS</option>
+                                        <option value="LED">LED</option>
+                                    </select>
+                                </div>
+    
+                                <div class="col-sm-12 col-lg-6">
+                                    <label class="mb-2"> <i class="bi bi-briefcase-fill"></i> Insumos</label>
+                                    <select name="" id="">
+                                        <option value="LPS">Control</option>
+                                        <option value="LED">Cable HDMI</option>
+                                    </select>
+                                    <div>
+                                        <label for="">Numero</label>
+                                        <select name="" id="">
+                                            <Option>1</Option>
+                                            <option value="">2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group py-2">
+                                <label class="mb-2"> <i class="bi bi-geo-alt-fill"></i> Fecha de Solicitud</label>
+                                <input type="date">
+                            </div>
+                            <div>
+                                <label for="">Hora</label>
+                                <select name="" id="">
+                                    <Option>9:00 a.m.</Option>
+                                    <option value="">10.00 a.m.</option>
+                                </select>
+                            </div>
+                            <div class="form-group py-2">
+                                <label class="mb-2"> <i class="bi bi-geo-alt-fill"></i> Fecha de Entrega</label>
+                                <input type="date">
+                            </div>
+                            <div>
+                                <label for="">Hora</label>
+                                <select name="" id="">
+                                    <Option>9:00 a.m.</Option>
+                                    <option value="">10.00 a.m.</option>
+                                </select>
                             </div>
                         </div>
                         <hr>
                         
                         <div class="mt-3">
-                            <input type="submit" value="Guardar Cambios" class="btn btn-sm d-block w-100 btn-warning">
+                            <input type="submit" value="Guardar Cambios" class="btn btn-sm d-block w-100 btn-amarillo">
                         </div>
                         
                     </form>

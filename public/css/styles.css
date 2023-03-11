@@ -317,3 +317,15 @@ footer ul li p{
     border: 1px solid #520968;
     box-shadow: 1px 1px 7px 1px #D29BFD;
 }
+.btn-amarillo{
+    background-color: rgb(156,132,18);
+}
+.bg-verde{
+    background: rgb(44, 82, 52);
+}
+.text-verde{
+    color: rgb(44, 82, 52);
+}
+.btn-verde{
+    background-color: rgb(44, 82,52);
+}
