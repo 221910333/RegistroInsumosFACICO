@@ -15,11 +15,13 @@ return new class extends Migration
             $table->id();
             $table->text('nom_solicitante');
             $table->integer('no_cuenta');
+            $table->integer('telefono');
             $table->text('unidad_aprendizaje');
             $table->text('profesor');
             $table->unsignedBigInteger('id_aula');
             $table->unsignedBigInteger('id_licenciatura');
             $table->unsignedBigInteger('id_insumo');
+            $table->unsignedBigInteger('id_numero');
             $table->date('fecha_solicitud');
             $table->date('fecha_entrega');
             $table->unsignedBigInteger('id_hora');
@@ -28,6 +30,7 @@ return new class extends Migration
             $table->foreign('id_aula')->references('id')->on('aulas');
             $table->foreign('id_licenciatura')->references('id')->on('licenciaturas');
             $table->foreign('id_insumo')->references('id')->on('insumos');
+            $table->foreign('id_numero')->references('id')->on('numeros');
             $table->foreign('id_hora')->references('id')->on('horas');
         });
     }

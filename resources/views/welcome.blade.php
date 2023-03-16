@@ -29,7 +29,7 @@
                             <h6 class="text-white fw-bold m-0">Información Personal</h6>
                         </span>
                         <p>
-                            <span class="fw-bold text-verde">Nombre -</span>
+                            <span class="fw-bold text-verde">Nombre - </span>
                             
                         </p>
                         <p>
@@ -95,87 +95,95 @@
                     </span>
 
                    
-                    <form action="#" method="post" class="p-3 text-center mt-4">
+                    <form action="save" method="post" class="p-3 text-center mt-4">
                         @csrf
                         <div class="row py-2">
                             <div class="col-sm-12 col-lg-6">
                                 <label class="mb-2"> <i class="bi bi-briefcase-fill"></i> Nombre del Solicitante</label>
-                                <input type="text" name="name" class="form-control text-center" id="nombre" placeholder="Nombre" value="">
+                                <input type="text" name="nom_solicitante" class="form-control text-center" id="nombre" placeholder="Nombre" value="">
                             </div>
 
                             <div class="col-sm-12 col-lg-6">
                                 <label class="mb-2"> <i class="bi bi-building"></i> Numero de cuenta</label>
-                                <input type="number" name="business_name" class="form-control text-center" id="razon" onkeypress="return soloLetras(event)" placeholder="Razon Social" value="">
+                                <input type="number" name="no_cuenta" class="form-control text-center" id="razon" onkeypress="return soloLetras(event)" placeholder="Razon Social" value="">
                             </div>
                         </div>
 
                         <div class="form-group py-2">
                             <label class="mb-2"> <i class="bi bi-geo-alt-fill"></i> Aula</label>
-                            <select name="aula" id="">
-                                <option value="">A1</option>
-                                <option value="">A2</option>
-                                <option value="">A2</option>
+                            <select name="id_aula" id="">
+                                @foreach($aulas as $aula)
+                                <option value="{{$aula->id}}">{{$aula->nombre}}</option>
+                                @endforeach
                             </select>
                         </div>
 
                         <div class="row py-2">
                             <div class="col-sm-12 col-lg-6">
                                 <label class="mb-2"> <i class="bi bi-phone"></i>Telefono</label>
-                                <input type="text" name="phone" class="form-control text-center" id="phone" placeholder="Número telefonico" value="">
+                                <input type="text" name="telefono" class="form-control text-center" id="phone" placeholder="Número telefonico" value="">
                             </div>
 
                             <div class="col-sm-12 col-lg-6">
                                 <label class="mb-2"> <i class="bi bi-envelope-fill"></i> unidad de Aprendizaje</label>
-                                <input type="text" name="email" class="form-control text-center" id="email" placeholder="Correo electronico" value="">
+                                <input type="text" name="unidad_aprendizaje" class="form-control text-center" id="email" placeholder="Correo electronico" value="">
                             </div>
                             <div class="col-sm-12 col-lg-6">
                                 <label class="mb-2"> <i class="bi bi-envelope-fill"></i> Profesor</label>
-                                <input type="text" name="email" class="form-control text-center" id="email" placeholder="Correo electronico" value="">
+                                <input type="text" name="profesor" class="form-control text-center" id="email" placeholder="Correo electronico" value="">
                             </div>
                             <div class="row py-2">
                                 <div class="col-sm-12 col-lg-6">
                                     <label class="mb-2"> <i class="bi bi-briefcase-fill"></i> Licenciatura</label>
-                                    <select name="" id="">
-                                        <option value="LPS">LPS</option>
-                                        <option value="LED">LED</option>
+                                    <select name="id_licenciatura" id="">
+                                        @foreach($licenciaturas as $licenciatura)
+                                        <option value="{{$licenciatura->id}}">{{$licenciatura->nombre}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
     
                                 <div class="col-sm-12 col-lg-6">
                                     <label class="mb-2"> <i class="bi bi-briefcase-fill"></i> Insumos</label>
-                                    <select name="" id="">
-                                        <option value="LPS">Control</option>
-                                        <option value="LED">Cable HDMI</option>
-                                    </select>
                                     <div>
-                                        <label for="">Numero</label>
-                                        <select name="" id="">
-                                            <Option>1</Option>
-                                            <option value="">2</option>
+                                        <select class="form-select" name="id_insumo" id="insumos">
+                                            <option  value="0">-----------------</option>
+                                            @foreach($insumos as $insumo)
+                                            <option value="{{$insumo->id}}">{{$insumo->nombre}}</option>
+                                            @endforeach
                                         </select>
+                                    </div>
+                                    <div>
+                                        <label for="">Seleccione el numero</label>
+                                        <div id="numero">
+                                            <select class="form-select" name="id_numero" id="id_numero">
+                                                <Option value="0">-----------</Option>
+                                            </select>
+                                        </div> 
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group py-2">
                                 <label class="mb-2"> <i class="bi bi-geo-alt-fill"></i> Fecha de Solicitud</label>
-                                <input type="date">
+                                <input name="fecha_solicitud" type="date">
                             </div>
                             <div>
                                 <label for="">Hora</label>
-                                <select name="" id="">
-                                    <Option>9:00 a.m.</Option>
-                                    <option value="">10.00 a.m.</option>
+                                <select name="id_hora" id="">
+                                    @foreach($horas as $hora)
+                                    <Option value="{{$hora->id}}">{{$hora->nombre}}</Option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group py-2">
                                 <label class="mb-2"> <i class="bi bi-geo-alt-fill"></i> Fecha de Entrega</label>
-                                <input type="date">
+                                <input name="fecha_entrega" type="date">
                             </div>
                             <div>
                                 <label for="">Hora</label>
-                                <select name="" id="">
-                                    <Option>9:00 a.m.</Option>
-                                    <option value="">10.00 a.m.</option>
+                                <select name="id_hora" id="">
+                                    @foreach($horas as $hora)
+                                    <Option value="{{$hora->id}}">{{$hora->nombre}}</Option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -191,4 +199,19 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("#insumos").change(function(){
+                var valinsumos = $("#insumos").val();
+                if(valinsumos ==0){
+                    $("#numero").empty();
+                    $("#numero").html('<select name="id_numero" id="id_numero"><option value="0">-------</option></select>');
+
+                }else{
+                    $("#numero").empty();
+                    $("#numero").load("{{ route('numeros2a')}}?id_insumo=" + valinsumos).serialize();
+                }
+            });
+        });
+        </script>
 @endsection

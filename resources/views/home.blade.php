@@ -32,10 +32,9 @@
             <br>
         </div>
     </div>
-
     <div class="container-fluid pt-md-2 p-md-5 pb-md-0 p-sm-2">
         <div class="row justify-content-center mb-3">
-           
+            @foreach ($registros as $registro)
                 <div class="col-lg-4 col-xl-3 col-sm-5 col-md-6 m-2 shadow p-5 text-center provider bg-light rounded">
                     <div class="btn-delete-container">
                         <form action="#" method="post" title="Eliminar">
@@ -47,15 +46,15 @@
                         </form>
                     </div>
                     <p class=" w-auto fs-6 fw-bold fst-italic rounded-pill">
-                        nombre 
+                        {{$registro->nom_solicitante}}
                     </p>
                     <p>
                         <i class="bi bi-telephone-fill"></i>
-                        - telefono
+                        {{$registro->no_cuenta}}
                     </p>
                     <p>
                         <i class="bi bi-geo-alt-fill"></i>
-                        - insumo
+                        {{$registro->insumo}}
                     </p>
 
                     <button
@@ -68,6 +67,7 @@
                     </button>
                     
                 </div>
+                @endforeach
 
             
                 <h3 class="text-center text-verde fw-bold">No hay registros en existencia</h3>

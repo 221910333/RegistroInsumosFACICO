@@ -12,11 +12,13 @@ class Prestamo extends Model
     protected $fillable = [
         'nom_solicitante',
         'no_cuenta',
+        'telefono',
         'unidad_aprendizaje',
         'profesor',
         'id_aula',
         'id_licenciatura',
         'id_insumo',
+        'id_numero',
         'fecha_solicitud',
         'fecha_entrega',
         'id_hora'

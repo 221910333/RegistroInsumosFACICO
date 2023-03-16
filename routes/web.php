@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SystemController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +25,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+//////////////////////////Administration
+Route::get('home', [AdminController::class, 'registros'])->name('registros');
+Route::get('/',[SystemController::class, 'prestamo'])->name('prestamo');
+Route::get('numeros2a', [SystemController::class, 'numeros2a'])->name('numeros2a');
+Route::post('save', 'SystemController@save')->name('save');
 ?>
