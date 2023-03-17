@@ -99,18 +99,18 @@
                         @csrf
                         <div class="row py-2">
                             <div class="col-sm-12 col-lg-6">
-                                <label class="mb-2"> <i class="bi bi-briefcase-fill"></i> Nombre del Solicitante</label>
-                                <input type="text" name="nom_solicitante" class="form-control text-center" id="nombre" placeholder="Nombre" value="">
+                                <label class="mb-2"> <i class="bi bi-person-circle"></i> Nombre del Solicitante</label>
+                                <input type="text" name="nom_solicitante" class="form-control text-center" id="nombre" placeholder="Nombre del Solicitante" value="">
                             </div>
 
                             <div class="col-sm-12 col-lg-6">
-                                <label class="mb-2"> <i class="bi bi-building"></i> Numero de cuenta</label>
-                                <input type="number" name="no_cuenta" class="form-control text-center" id="razon" onkeypress="return soloLetras(event)" placeholder="Razon Social" value="">
+                                <label class="mb-2"> <i class="bi bi-123"></i> Numero de cuenta</label>
+                                <input type="number" name="no_cuenta" class="form-control text-center" id="razon" onkeypress="return soloLetras(event)" placeholder="Numero de Cuenta" value="">
                             </div>
                         </div>
 
                         <div class="form-group py-2">
-                            <label class="mb-2"> <i class="bi bi-geo-alt-fill"></i> Aula</label>
+                            <label class="mb-2"> <i class="bi bi-bank"></i> Aula</label>
                             <select name="id_aula" id="">
                                 @foreach($aulas as $aula)
                                 <option value="{{$aula->id}}">{{$aula->nombre}}</option>
@@ -120,21 +120,21 @@
 
                         <div class="row py-2">
                             <div class="col-sm-12 col-lg-6">
-                                <label class="mb-2"> <i class="bi bi-phone"></i>Telefono</label>
-                                <input type="text" name="telefono" class="form-control text-center" id="phone" placeholder="Número telefonico" value="">
+                                <label class="mb-2"> <i class="bi bi-telephone-fill"></i>Telefono</label>
+                                <input type="text" name="telefono" class="form-control text-center" id="phone" placeholder="Número Telefonico" value="">
                             </div>
 
                             <div class="col-sm-12 col-lg-6">
-                                <label class="mb-2"> <i class="bi bi-envelope-fill"></i> unidad de Aprendizaje</label>
-                                <input type="text" name="unidad_aprendizaje" class="form-control text-center" id="email" placeholder="Correo electronico" value="">
+                                <label class="mb-2"> <i class="bi bi-archive"></i> Unidad de Aprendizaje</label>
+                                <input type="text" name="unidad_aprendizaje" class="form-control text-center" id="email" placeholder=" Unidad de Aprendizaje" value="">
                             </div>
                             <div class="col-sm-12 col-lg-6">
-                                <label class="mb-2"> <i class="bi bi-envelope-fill"></i> Profesor</label>
-                                <input type="text" name="profesor" class="form-control text-center" id="email" placeholder="Correo electronico" value="">
+                                <label class="mb-2"> <i class="bi bi-person-check-fill"></i> Profesor</label>
+                                <input type="text" name="profesor" class="form-control text-center" id="email" placeholder="Profesor" value="">
                             </div>
                             <div class="row py-2">
                                 <div class="col-sm-12 col-lg-6">
-                                    <label class="mb-2"> <i class="bi bi-briefcase-fill"></i> Licenciatura</label>
+                                    <label class="mb-2"> <i class="bi bi-bookmark-star"></i> Licenciatura</label>
                                     <select name="id_licenciatura" id="">
                                         @foreach($licenciaturas as $licenciatura)
                                         <option value="{{$licenciatura->id}}">{{$licenciatura->nombre}}</option>
@@ -143,7 +143,7 @@
                                 </div>
     
                                 <div class="col-sm-12 col-lg-6">
-                                    <label class="mb-2"> <i class="bi bi-briefcase-fill"></i> Insumos</label>
+                                    <label class="mb-2"> <i class="bi bi-box2"></i> Insumos</label>
                                     <div>
                                         <select class="form-select" name="id_insumo" id="insumos">
                                             <option  value="0">-----------------</option>
@@ -153,7 +153,7 @@
                                         </select>
                                     </div>
                                     <div>
-                                        <label for="">Seleccione el numero</label>
+                                        <label for=""> <i class="bi bi-list-ol"></i> Seleccione el numero</label>
                                         <div id="numero">
                                             <select class="form-select" name="id_numero" id="id_numero">
                                                 <Option value="0">-----------</Option>
@@ -163,11 +163,11 @@
                                 </div>
                             </div>
                             <div class="form-group py-2">
-                                <label class="mb-2"> <i class="bi bi-geo-alt-fill"></i> Fecha de Solicitud</label>
+                                <label class="mb-2"> <i class="bi bi-calendar-event"></i> Fecha de Solicitud</label>
                                 <input name="fecha_solicitud" type="date">
                             </div>
                             <div>
-                                <label for="">Hora</label>
+                                <label for=""><i class="bi bi-alarm"></i> Hora</label>
                                 <select name="id_hora" id="">
                                     @foreach($horas as $hora)
                                     <Option value="{{$hora->id}}">{{$hora->nombre}}</Option>
@@ -175,11 +175,11 @@
                                 </select>
                             </div>
                             <div class="form-group py-2">
-                                <label class="mb-2"> <i class="bi bi-geo-alt-fill"></i> Fecha de Entrega</label>
+                                <label class="mb-2"> <i class="bi bi-calendar-event"></i> Fecha de Entrega</label>
                                 <input name="fecha_entrega" type="date">
                             </div>
                             <div>
-                                <label for="">Hora</label>
+                                <label for=""><i class="bi bi-alarm"></i> Hora</label>
                                 <select name="id_hora" id="">
                                     @foreach($horas as $hora)
                                     <Option value="{{$hora->id}}">{{$hora->nombre}}</Option>
