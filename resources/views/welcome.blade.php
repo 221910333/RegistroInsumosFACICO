@@ -28,46 +28,48 @@
                         <span class="badge badge-info w-100 bg-verde p-2 mb-2">
                             <h6 class="text-white fw-bold m-0">Información Personal</h6>
                         </span>
-                        <p>
-                            <span class="fw-bold text-verde">Nombre - </span>
-                            
+                        <div >
+
+                        </div>
+                        <p class="fw-bold text-amarillo">
+                           Nombre: <span id="resultado" class="fw-bold text-verde">-------</span> 
                         </p>
-                        <p>
-                            <span class="fw-bold text-verde">Numero de Cuenta -</span>
+                        <p class="fw-bold text-amarillo">
+                           Numero de Cuenta <span id="resultadoNumero" class="fw-bold text-verde">-------</span>
                         </p>
-                        <p>
-                            <span class="fw-bold text-verde">Aula -</span>
+                        <p class="fw-bold text-amarillo">
+                           Aula <span id="aulaSeleccionada" class="fw-bold text-verde">-------</span>
                         </p>
-                        <p>
-                            <span class="fw-bold text-verde">Teléfono -</span>
+                        <p class="fw-bold text-amarillo">
+                           Teléfono <span class="fw-bold text-verde">-------</span>
                         </p>
-                        <p>
-                            <span class="fw-bold text-verde">Unidad De Aprendizaje -</span>
+                        <p class="fw-bold text-amarillo">
+                            Unidad De Aprendizaje <span class="fw-bold text-verde">-------</span>
                         </p>
-                        <p>
-                            <span class="fw-bold text-verde">Profesor -</span>
+                        <p class="fw-bold text-amarillo">
+                            Profesor <span class="fw-bold text-verde">-------</span>
                         </p>
-                        <p>
-                            <span class="fw-bold text-verde">Licenciatura -</span>
+                        <p class="fw-bold text-amarillo">
+                            Licenciatura <span class="fw-bold text-verde">-------</span>
                         </p>
                     </div>
                     <div>
                         <span class="badge badge-info w-100 bg-verde p-2 mb-2">
                             <h6 class="text-white fw-bold m-0">Datos del Insumo</h6>
                         </span>
-                        <p>
-                            <span class="fw-bold text-verde">Insumo -</span>
+                        <p class="fw-bold text-amarillo">
+                            Insumo <span class="fw-bold text-verde">-------</span>
                             
                         </p>
-                        <p>
-                            <span class="fw-bold text-verde">Numero de Insumo -</span>
+                        <p class="fw-bold text-amarillo">
+                            Numero de Insumo <span class="fw-bold text-verde">-------</span>
                            
                         </p>
-                        <p>
-                            <span class="fw-bold text-verde">Fecha Solicitud y Hora -</span>
+                        <p class="fw-bold text-amarillo">
+                            Fecha Solicitud y Hora <span class="fw-bold text-verde">-------</span>
                         </p>
-                        <p>
-                            <span class="fw-bold text-verde">Fecha de Entrega y Hora -</span>
+                        <p class="fw-bold text-amarillo">
+                            Fecha de Entrega y Hora <span class="fw-bold text-verde">-------</span>
                         </p>
                     </div>
                 </div>
@@ -100,18 +102,18 @@
                         <div class="row py-2">
                             <div class="col-sm-12 col-lg-6">
                                 <label class="mb-2"> <i class="bi bi-person-circle"></i> Nombre del Solicitante</label>
-                                <input type="text" name="nom_solicitante" class="form-control text-center" id="nombre" placeholder="Nombre del Solicitante" value="">
+                                <input type="text" name="nom_solicitante" class="form-control text-center" id="nombre" placeholder="Nombre del Solicitante" value="" onkeyup="mostrar(this.value)">
                             </div>
 
                             <div class="col-sm-12 col-lg-6">
                                 <label class="mb-2"> <i class="bi bi-123"></i> Numero de cuenta</label>
-                                <input type="number" name="no_cuenta" class="form-control text-center" id="razon" onkeypress="return soloLetras(event)" placeholder="Numero de Cuenta" value="">
+                                <input type="number" name="no_cuenta" class="form-control text-center" id="razon" onkeypress="return soloLetras(event)" placeholder="Numero de Cuenta" value="" onkeyup="mostrarNumero(this.value)">
                             </div>
                         </div>
 
                         <div class="form-group py-2">
                             <label class="mb-2"> <i class="bi bi-bank"></i> Aula</label>
-                            <select name="id_aula" id="">
+                            <select name="id_aula" id="Aulas">
                                 @foreach($aulas as $aula)
                                 <option value="{{$aula->id}}">{{$aula->nombre}}</option>
                                 @endforeach
@@ -214,4 +216,5 @@
             });
         });
         </script>
+        <script src="js/TextForm.js"></script>
 @endsection
