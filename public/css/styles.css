@@ -327,6 +327,9 @@ footer ul li p{
 .text-verde{
     color: rgb(44, 82, 52);
 }
+.text-amarillo{
+    color: rgb(156,132,18);
+}
 .btn-verde{
     background-color: rgb(44, 82,52);
 }
