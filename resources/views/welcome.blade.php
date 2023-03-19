@@ -38,19 +38,19 @@
                            Numero de Cuenta <span id="resultadoNumero" class="fw-bold text-verde">-------</span>
                         </p>
                         <p class="fw-bold text-amarillo">
-                           Aula <span id="aulaSeleccionada" class="fw-bold text-verde">-------</span>
+                           Aula <span id="resultadoAula" name="resultado" class="fw-bold text-verde">-------</span>
                         </p>
                         <p class="fw-bold text-amarillo">
-                           Teléfono <span class="fw-bold text-verde">-------</span>
+                           Teléfono <span id="resultadoTelefono" class="fw-bold text-verde">-------</span>
                         </p>
                         <p class="fw-bold text-amarillo">
-                            Unidad De Aprendizaje <span class="fw-bold text-verde">-------</span>
+                            Unidad De Aprendizaje <span id="resultadoUA" class="fw-bold text-verde">-------</span>
                         </p>
                         <p class="fw-bold text-amarillo">
-                            Profesor <span class="fw-bold text-verde">-------</span>
+                            Profesor <span id="resultadoProfesor" class="fw-bold text-verde">-------</span>
                         </p>
                         <p class="fw-bold text-amarillo">
-                            Licenciatura <span class="fw-bold text-verde">-------</span>
+                            Licenciatura <span id="resultadoLicenciatura" class="fw-bold text-verde">-------</span>
                         </p>
                     </div>
                     <div>
@@ -58,18 +58,14 @@
                             <h6 class="text-white fw-bold m-0">Datos del Insumo</h6>
                         </span>
                         <p class="fw-bold text-amarillo">
-                            Insumo <span class="fw-bold text-verde">-------</span>
+                            Insumo <span id="resultadoInsumos" class="fw-bold text-verde">-------</span>
                             
                         </p>
                         <p class="fw-bold text-amarillo">
-                            Numero de Insumo <span class="fw-bold text-verde">-------</span>
-                           
+                            Fecha Solicitud y Hora <span id="resultadoFS" class="fw-bold text-verde">-------</span>
                         </p>
                         <p class="fw-bold text-amarillo">
-                            Fecha Solicitud y Hora <span class="fw-bold text-verde">-------</span>
-                        </p>
-                        <p class="fw-bold text-amarillo">
-                            Fecha de Entrega y Hora <span class="fw-bold text-verde">-------</span>
+                            Fecha de Entrega y Hora <span id="resultadoFE" class="fw-bold text-verde">-------</span>
                         </p>
                     </div>
                 </div>
@@ -113,7 +109,7 @@
 
                         <div class="form-group py-2">
                             <label class="mb-2"> <i class="bi bi-bank"></i> Aula</label>
-                            <select name="id_aula" id="Aulas">
+                            <select name="id_aula" id="aulas">
                                 @foreach($aulas as $aula)
                                 <option value="{{$aula->id}}">{{$aula->nombre}}</option>
                                 @endforeach
@@ -123,21 +119,21 @@
                         <div class="row py-2">
                             <div class="col-sm-12 col-lg-6">
                                 <label class="mb-2"> <i class="bi bi-telephone-fill"></i>Telefono</label>
-                                <input type="text" name="telefono" class="form-control text-center" id="phone" placeholder="Número Telefonico" value="">
+                                <input type="text" name="telefono" class="form-control text-center" id="phone" placeholder="Número Telefonico" value="" onkeyup="mostrarTelefono(this.value)">
                             </div>
 
                             <div class="col-sm-12 col-lg-6">
                                 <label class="mb-2"> <i class="bi bi-archive"></i> Unidad de Aprendizaje</label>
-                                <input type="text" name="unidad_aprendizaje" class="form-control text-center" id="email" placeholder=" Unidad de Aprendizaje" value="">
+                                <input type="text" name="unidad_aprendizaje" class="form-control text-center" id="email" placeholder=" Unidad de Aprendizaje" value="" onkeyup="mostrarUA(this.value)">
                             </div>
                             <div class="col-sm-12 col-lg-6">
                                 <label class="mb-2"> <i class="bi bi-person-check-fill"></i> Profesor</label>
-                                <input type="text" name="profesor" class="form-control text-center" id="email" placeholder="Profesor" value="">
+                                <input type="text" name="profesor" class="form-control text-center" id="email" placeholder="Profesor" value="" onkeyup="mostrarProfesor(this.value)">
                             </div>
                             <div class="row py-2">
                                 <div class="col-sm-12 col-lg-6">
                                     <label class="mb-2"> <i class="bi bi-bookmark-star"></i> Licenciatura</label>
-                                    <select name="id_licenciatura" id="">
+                                    <select name="id_licenciatura" id="licenciaturas">
                                         @foreach($licenciaturas as $licenciatura)
                                         <option value="{{$licenciatura->id}}">{{$licenciatura->nombre}}</option>
                                         @endforeach
@@ -165,8 +161,8 @@
                                 </div>
                             </div>
                             <div class="form-group py-2">
-                                <label class="mb-2"> <i class="bi bi-calendar-event"></i> Fecha de Solicitud</label>
-                                <input name="fecha_solicitud" type="date">
+                                <label class="mb-2"> <i class="bi bi-calendar-event" ></i> Fecha de Solicitud</label>
+                                <input name="fecha_solicitud" value="datetime" min="2023-02-01" max="2024-07-01" type="date" onkeyup="mostrarFS(this.value)">
                             </div>
                             <div>
                                 <label for=""><i class="bi bi-alarm"></i> Hora</label>
@@ -178,7 +174,7 @@
                             </div>
                             <div class="form-group py-2">
                                 <label class="mb-2"> <i class="bi bi-calendar-event"></i> Fecha de Entrega</label>
-                                <input name="fecha_entrega" type="date">
+                                <input name="fecha_entrega" type="date" onkeyup="mostrarFE(this.value)">
                             </div>
                             <div>
                                 <label for=""><i class="bi bi-alarm"></i> Hora</label>
@@ -205,6 +201,7 @@
         $(document).ready(function(){
             $("#insumos").change(function(){
                 var valinsumos = $("#insumos").val();
+                
                 if(valinsumos ==0){
                     $("#numero").empty();
                     $("#numero").html('<select name="id_numero" id="id_numero"><option value="0">-------</option></select>');

@@ -14,5 +14,7 @@
         <option value="{{$numero->id}}">{{$numero->nombre}}</option>
         @endforeach
         </select>
+        <script src="js/TextForm.js"></script>
 </body>
+
 </html>
