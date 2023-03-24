@@ -106,22 +106,21 @@
                                 <input type="number" name="no_cuenta" class="form-control text-center" id="razon" onkeypress="return soloLetras(event)" placeholder="Numero de Cuenta" value="" onkeyup="mostrarNumero(this.value)">
                             </div>
                         </div>
-
-                        <div class="form-group py-2">
-                            <label class="mb-2"> <i class="bi bi-bank"></i> Aula</label>
-                            <select name="id_aula" id="aulas">
-                                @foreach($aulas as $aula)
-                                <option value="{{$aula->id}}">{{$aula->nombre}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
                         <div class="row py-2">
+                            <div class="col-sm-12 col-lg-6">
+                                <label class="mb-2"> <i class="bi bi-bank"></i> Aula</label>
+                                <select class="form-select" name="id_aula" id="aulas">
+                                    @foreach($aulas as $aula)
+                                    <option value="{{$aula->id}}">{{$aula->nombre}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="col-sm-12 col-lg-6">
                                 <label class="mb-2"> <i class="bi bi-telephone-fill"></i>Telefono</label>
                                 <input type="text" name="telefono" class="form-control text-center" id="phone" placeholder="Número Telefonico" value="" onkeyup="mostrarTelefono(this.value)">
                             </div>
-
+                        </div>
+                        <div class="row py-2">
                             <div class="col-sm-12 col-lg-6">
                                 <label class="mb-2"> <i class="bi bi-archive"></i> Unidad de Aprendizaje</label>
                                 <input type="text" name="unidad_aprendizaje" class="form-control text-center" id="email" placeholder=" Unidad de Aprendizaje" value="" onkeyup="mostrarUA(this.value)">
@@ -130,16 +129,16 @@
                                 <label class="mb-2"> <i class="bi bi-person-check-fill"></i> Profesor</label>
                                 <input type="text" name="profesor" class="form-control text-center" id="email" placeholder="Profesor" value="" onkeyup="mostrarProfesor(this.value)">
                             </div>
-                            <div class="row py-2">
+                        </div>
+                            <div class="row py-3">
                                 <div class="col-sm-12 col-lg-6">
                                     <label class="mb-2"> <i class="bi bi-bookmark-star"></i> Licenciatura</label>
-                                    <select name="id_licenciatura" id="licenciaturas">
+                                    <select class="form-select" name="id_licenciatura" id="licenciaturas">
                                         @foreach($licenciaturas as $licenciatura)
                                         <option value="{{$licenciatura->id}}">{{$licenciatura->nombre}}</option>
                                         @endforeach
                                     </select>
                                 </div>
-    
                                 <div class="col-sm-12 col-lg-6">
                                     <label class="mb-2"> <i class="bi bi-box2"></i> Insumos</label>
                                     <div>

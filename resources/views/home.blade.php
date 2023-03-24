@@ -23,10 +23,10 @@
                 </div>
                 
                 <div class="col-lg-1 mx-5">
-                    <a href="#" class="btn btn-verde ms-1 text-blanco" target="_blank">Exportar <strong>Semestre A</strong></a>
+                    <a href="{{ route('exportarA') }}" class="btn btn-verde ms-1 text-blanco" target="_blank">Exportar <strong>Semestre A</strong></a>
                 </div>
                 <div class="col-lg-1 mx-5">
-                    <a href="#" class="btn btn-verde ms-1 text-blanco" target="_blank">Exportar <strong>Semestre B</strong></a>
+                    <a href="{{ route('exportarB') }}" class="btn btn-verde ms-1 text-blanco" target="_blank">Exportar <strong>Semestre B</strong></a>
                 </div>
             </div>
             <br>
@@ -54,7 +54,7 @@
                     </p>
                     <p>
                         <i class="bi bi-geo-alt-fill"></i>
-                        {{$registro->insumo}}
+                        {{$registro->insumo}} {{$registro->numero}}
                     </p>
 
                     <button

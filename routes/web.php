@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SystemController;
+use App\Http\Controllers\ExcelController;
 
 
 /*
@@ -31,4 +32,7 @@ Route::get('home', [AdminController::class, 'registros'])->name('registros');
 Route::get('/',[SystemController::class, 'prestamo'])->name('prestamo');
 Route::get('numeros2a', [SystemController::class, 'numeros2a'])->name('numeros2a');
 Route::post('save', [SystemController::class, 'save'])->name('save');
+
+Route::get('exportarA', [ExcelController::class, 'exportA'])->name('exportarA');
+Route::get('exportarB', [ExcelController::class, 'exportB'])->name('exportarB');
 ?>

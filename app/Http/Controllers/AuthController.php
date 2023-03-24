@@ -12,7 +12,7 @@ class AuthController extends Controller{
             request()->session()->flush();
         }
 
-        return redirect()->route('welcome');
+        return redirect('/');
     }
     
 }
