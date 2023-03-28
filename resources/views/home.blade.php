@@ -57,14 +57,14 @@
                         {{$registro->insumo}} {{$registro->numero}}
                     </p>
 
-                    <button
+                    <a href="{{ route('detalle', ['id'=>$registro->id])}}"><button
                         data-bs-target="#editClient "
                         data-bs-toggle="modal"
                         class="btn btn-amarillo text-blanco btn-sm d-block w-100 btn-edit"
-                        title="Editar">
+                        title="Detalle">
                         <i class="bi bi-pencil-square"></i>
-                        Editar
-                    </button>
+                        Detalle
+                    </button></a>
                     
                 </div>
                 @endforeach

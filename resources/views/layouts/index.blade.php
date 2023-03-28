@@ -17,8 +17,6 @@
 
 </head>
 
-@section('navbar')
-@include('layouts.navbar')
 @show
 
 <body>

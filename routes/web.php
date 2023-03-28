@@ -35,4 +35,6 @@ Route::post('save', [SystemController::class, 'save'])->name('save');
 
 Route::get('exportarA', [ExcelController::class, 'exportA'])->name('exportarA');
 Route::get('exportarB', [ExcelController::class, 'exportB'])->name('exportarB');
+
+Route::get('detalle/{id}', [AdminController::class, 'detalle'])->name('detalle');
 ?>
