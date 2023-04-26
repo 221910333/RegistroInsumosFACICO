@@ -15,10 +15,17 @@
             <h1 class="text-center mt-3 text-verde fw-bold">Directorio de Registros</h1>
             <br><br>
             <div class="row ps-5 pe-5 justify-content-center text-center text-white fw-bold">
+                <form action="#">
+                    <input type="text" name="criterio" value="2023">
+                    <input type="submit" value="Buscar">
+                </form>
+                <br><br><br><br>
                 <div class="col-lg-1 mx-5 btn-amarillo text-blanco">
                     <p class="m-0 ">
-                        <span class="d-block" >Registros</span>
-                        Total
+                        <span class="d-block" >Agregar  Nuevo</span>
+                       <a class="text-verde fw-bold" href="{{ route('form_altas')}}">Insumos</a>
+                       <br>
+                       <a class="text-verde fw-bold" href="{{ route('form_altas')}}">Aula</a>
                     </p>
                 </div>
                 
@@ -32,47 +39,7 @@
             <br>
         </div>
     </div>
-    <div class="container-fluid pt-md-2 p-md-5 pb-md-0 p-sm-2">
-        <div class="row justify-content-center mb-3">
-            @foreach ($registros as $registro)
-                <div class="col-lg-4 col-xl-3 col-sm-5 col-md-6 m-2 shadow p-5 text-center provider bg-light rounded">
-                    <div class="btn-delete-container">
-                        <form action="#" method="post" title="Eliminar">
-                            @csrf
-                            @method('delete')
-                            <button class="btn btn-danger btn-sm" onclick="return confirm('Seguro que deseas eliminar')">
-                                <i class="bi bi-x-lg"></i>
-                            </button>
-                        </form>
-                    </div>
-                    <p class=" w-auto fs-6 fw-bold fst-italic rounded-pill">
-                        {{$registro->nom_solicitante}}
-                    </p>
-                    <p>
-                        <i class="bi bi-telephone-fill"></i>
-                        {{$registro->no_cuenta}}
-                    </p>
-                    <p>
-                        <i class="bi bi-geo-alt-fill"></i>
-                        {{$registro->insumo}} {{$registro->numero}}
-                    </p>
-
-                    <a href="{{ route('detalle', ['id'=>$registro->id])}}"><button
-                        data-bs-target="#editClient "
-                        data-bs-toggle="modal"
-                        class="btn btn-amarillo text-blanco btn-sm d-block w-100 btn-edit"
-                        title="Detalle">
-                        <i class="bi bi-pencil-square"></i>
-                        Detalle
-                    </button></a>
-                    
-                </div>
-                @endforeach
-
-            
-                <h3 class="text-center text-verde fw-bold">No hay registros en existencia</h3>
-            
-        </div>
+   
     </div>
 
 @endsection

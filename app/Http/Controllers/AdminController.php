@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Prestamo;
+use App\Models\Insumo;
 
 class AdminController extends Controller{
     public function registros(){
@@ -30,5 +31,28 @@ class AdminController extends Controller{
         ->get();
         return view("detalle")
         ->with(['prestamos' => $prestamos]);
+    }
+
+    ////////////////////////////Altas
+    public function form_altas() {
+
+        return view('form_altas');
+    }
+    function guardar(Request $request){
+        $this->validate($request, [
+            'nombre' => 'required',
+        ]);
+        
+    $vehiculo = new Insumo;
+    $vehiculo->nombre = $request->input("nombre");
+  
+    $vehiculo->save();
+    $vehiculos = Insumo::all();
+
+        return redirect()->to('form_altas');
+    }
+    public function tablainsumos(){
+        $insumos=DB::table('insumos')->get();
+        return view('form_altas', compact('insumos'));
     }
 }

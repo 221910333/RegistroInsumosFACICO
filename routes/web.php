@@ -37,4 +37,7 @@ Route::get('exportarA', [ExcelController::class, 'exportA'])->name('exportarA');
 Route::get('exportarB', [ExcelController::class, 'exportB'])->name('exportarB');
 
 Route::get('detalle/{id}', [AdminController::class, 'detalle'])->name('detalle');
+Route::get('form_altas', [AdminController::class, 'form_altas'])->name('form_altas');
+Route::post('/guardar',[AdminController::Class ,'guardar']);
+Route::get('/tablainsumo', [AdminController::class, 'tablainsumo'])->name('form_altas');
 ?>

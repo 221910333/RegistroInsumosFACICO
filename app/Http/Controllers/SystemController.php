@@ -28,6 +28,9 @@ class SystemController extends Controller{
     }
 
     public function save(Request $request){
+        $this->validate($request, [
+            'telefono'=>'required',
+        ]);
         $prestamo= new Prestamo;
         $prestamo -> nom_solicitante = $request->input('nom_solicitante');
         $prestamo -> no_cuenta = $request->input('no_cuenta');
@@ -37,10 +40,8 @@ class SystemController extends Controller{
         $prestamo -> id_aula = $request->input('id_aula');
         $prestamo -> id_licenciatura = $request->input('id_licenciatura');
         $prestamo -> id_insumo = $request->input('id_insumo');
-        $prestamo -> id_numero = $request->input('id_numero');
         $prestamo -> fecha_solicitud = $request->input('fecha_solicitud');
         $prestamo -> fecha_entrega = $request->input('fecha_entrega');
-        $prestamo -> id_hora = $request->input('id_hora');
         $prestamo -> save();
 
         

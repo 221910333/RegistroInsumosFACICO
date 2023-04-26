@@ -74,9 +74,7 @@
                             <div class="row justify-content-center">
                                 <img src="{{ asset('img/assets/corporate_default.png')}}" alt="logo-facico" width="500px" height="200px" class="img-login">
                             </div>
-                            <a class="btn btn-link text-verde" href="{{ route('register') }}">
-                                {{ __('No Tienes una cuenta') }}
-                            </a>
+                           
                         </div>
                     </div>
                 </div>

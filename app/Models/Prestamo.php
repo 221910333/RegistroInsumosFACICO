@@ -19,10 +19,8 @@ class Prestamo extends Model
         'id_aula',
         'id_licenciatura',
         'id_insumo',
-        'id_numero',
         'fecha_solicitud',
-        'fecha_entrega',
-        'id_hora'
+        'fecha_entrega'
 
     ];
 }
