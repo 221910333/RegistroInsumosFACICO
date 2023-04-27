@@ -40,4 +40,6 @@ Route::get('detalle/{id}', [AdminController::class, 'detalle'])->name('detalle')
 Route::get('form_altas', [AdminController::class, 'form_altas'])->name('form_altas');
 Route::post('/guardar',[AdminController::Class ,'guardar']);
 Route::get('/tablainsumo', [AdminController::class, 'tablainsumo'])->name('form_altas');
+//////////////////Borrar Insumo//////////////////
+Route::name('borrarinsumo')->get('borrarI/{id}', [AdminController::class, 'borrarI']);
 ?>

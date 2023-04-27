@@ -20,14 +20,13 @@ return new class extends Migration
             $table->text('profesor');
             $table->unsignedBigInteger('id_aula');
             $table->unsignedBigInteger('id_licenciatura');
-            $table->unsignedBigInteger('id_insumo');
+            $table->text('id_insumo');
             $table->date('fecha_solicitud');
             $table->date('fecha_entrega');
             $table->timestamps();
 
             $table->foreign('id_aula')->references('id')->on('aulas');
             $table->foreign('id_licenciatura')->references('id')->on('licenciaturas');
-            $table->foreign('id_insumo')->references('id')->on('insumos');
         });
     }
     /**

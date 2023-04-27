@@ -39,7 +39,7 @@ class SystemController extends Controller{
         $prestamo -> profesor = $request->input('profesor');
         $prestamo -> id_aula = $request->input('id_aula');
         $prestamo -> id_licenciatura = $request->input('id_licenciatura');
-        $prestamo -> id_insumo = $request->input('id_insumo');
+        $prestamo -> id_insumo = json_encode($request->input('nombre'));
         $prestamo -> fecha_solicitud = $request->input('fecha_solicitud');
         $prestamo -> fecha_entrega = $request->input('fecha_entrega');
         $prestamo -> save();

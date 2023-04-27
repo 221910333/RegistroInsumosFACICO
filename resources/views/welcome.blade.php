@@ -159,7 +159,7 @@
                                 @foreach($insumos as $insumo)
                                 <ul class="list-group">
                                     <li class="list-group-item">
-                                      <input name="id_insumo[]" class="form-check-input me-1" type="checkbox" value="{{$insumo->id}}" aria-label="...">
+                                      <input name="nombre[]" class="form-check-input me-1" type="checkbox" value="{{$insumo->nombre}}" aria-label="...">
                                       {{$insumo->nombre}}
                                     </li>
                                 </ul>
