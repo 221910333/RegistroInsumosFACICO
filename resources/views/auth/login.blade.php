@@ -39,17 +39,7 @@
                                     </div>
                                 </div>
                                 <br>
-                                <div class="form-group">
-                                    <div class="col-md-6 offset-md-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                        
-                                            <label class="form-check-label text-center w-100 mb-lg-3 fw-bold text-verde" for="remember">
-                                                {{ __('Recordarme') }}
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <div class="form-group">
                                     <div class="g-recaptcha" data-sitekey="6Lc4OgkgAAAAAB_rKDq7zRMGtdjhjbkL_sF0SNiS" id="captcha"></div>
                                 </div>

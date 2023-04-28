@@ -32,6 +32,7 @@ Route::get('home', [AdminController::class, 'registros'])->name('registros');
 Route::get('/',[SystemController::class, 'prestamo'])->name('prestamo');
 Route::get('numeros2a', [SystemController::class, 'numeros2a'])->name('numeros2a');
 Route::post('save', [SystemController::class, 'save'])->name('save');
+Route::get('registrar', [AdminController::class, 'registrar'])->name('registrar');
 
 Route::get('exportarA', [ExcelController::class, 'exportA'])->name('exportarA');
 Route::get('exportarB', [ExcelController::class, 'exportB'])->name('exportarB');
@@ -40,6 +41,8 @@ Route::get('detalle/{id}', [AdminController::class, 'detalle'])->name('detalle')
 Route::get('form_altas', [AdminController::class, 'form_altas'])->name('form_altas');
 Route::post('/guardar',[AdminController::Class ,'guardar']);
 Route::get('/tablainsumo', [AdminController::class, 'tablainsumo'])->name('form_altas');
+Route::get('/mostrar', [ExcelController::class, 'mostrar'])->name('mostrar');
 //////////////////Borrar Insumo//////////////////
 Route::name('borrarinsumo')->get('borrarI/{id}', [AdminController::class, 'borrarI']);
+
 ?>

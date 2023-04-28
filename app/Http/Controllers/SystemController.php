@@ -30,16 +30,23 @@ class SystemController extends Controller{
     public function save(Request $request){
         $this->validate($request, [
             'telefono'=>'required',
+            'solicitante'=>'required',
+            'cuenta'=>'required',
+            'insumo'=>'required',
+            'unidad_aprendizaje'=>'required',
+            'profesor'=>'required',
+            'fecha_solicitud'=>'required',
+            'fecha_entrega'=>'required',
         ]);
         $prestamo= new Prestamo;
-        $prestamo -> nom_solicitante = $request->input('nom_solicitante');
-        $prestamo -> no_cuenta = $request->input('no_cuenta');
+        $prestamo -> nom_solicitante = $request->input('solicitante');
+        $prestamo -> no_cuenta = $request->input('cuenta');
         $prestamo -> telefono = $request->input('telefono');
         $prestamo -> unidad_aprendizaje = $request->input('unidad_aprendizaje');
         $prestamo -> profesor = $request->input('profesor');
         $prestamo -> id_aula = $request->input('id_aula');
         $prestamo -> id_licenciatura = $request->input('id_licenciatura');
-        $prestamo -> id_insumo = json_encode($request->input('nombre'));
+        $prestamo -> id_insumo = json_encode($request->input('insumo'));
         $prestamo -> fecha_solicitud = $request->input('fecha_solicitud');
         $prestamo -> fecha_entrega = $request->input('fecha_entrega');
         $prestamo -> save();

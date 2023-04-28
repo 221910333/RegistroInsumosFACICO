@@ -4,9 +4,10 @@
 <div class="container">
     <aside class="controls-clients">
         <div class="my-3">
-            <button type="button" class="btn btn-verde" data-bs-toggle="modal" data-bs-target="#createClient">
-                <i class="bi bi-person-plus-fill text-blanco"></i>
-            </button>
+            <div>
+                
+                <a class="btn btn-verde ms-1 text-blanco" href="{{ route('registrar')}}"><i class="bi bi-person-plus-fill text-blanco"> Agregar Administrador</i></a>
+            </div>
             <span class="fw-bold overlay">Agregar Nuevo Registro</span>
         </div>
     </aside>
@@ -15,17 +16,13 @@
             <h1 class="text-center mt-3 text-verde fw-bold">Directorio de Registros</h1>
             <br><br>
             <div class="row ps-5 pe-5 justify-content-center text-center text-white fw-bold">
-                <form action="#">
-                    <input type="text" name="criterio" value="2023">
-                    <input type="submit" value="Buscar">
-                </form>
+                
                 <br><br><br><br>
                 <div class="col-lg-1 mx-5 btn-amarillo text-blanco">
                     <p class="m-0 ">
                         <span class="d-block" >Agregar  Nuevo</span>
                        <a class="text-verde fw-bold" href="{{ route('form_altas')}}">Insumos</a>
                        <br>
-                       <a class="text-verde fw-bold" href="{{ route('form_altas')}}">Aula</a>
                     </p>
                 </div>
                 

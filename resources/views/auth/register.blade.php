@@ -1,9 +1,12 @@
-@extends('layouts.index')
+@extends('layouts.index2')
 
 @section('content')
 <div class="container">
     <div class="container-fluid w-100 vh-100 row align-items-center m-0 bg-sm-login">
         <div class="row h-75">
+            <div>
+                <a class="btn btn-verde ms-1 text-blanco"  href="{{ route('registros') }}">Regresar</a>
+              </div>
             <div class="col-sm-12 col-md-10 col-lg-8 align-items-center m-auto shadow-lg bg-light">
                 <div class="card-header btn-amarillo text-blanco w-100 fw-bold p-2 mb-2 text-center">{{ __('Register') }}</div>
 

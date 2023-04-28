@@ -31,7 +31,6 @@ class PrestamosExportB implements FromCollection, WithHeadings{
         ->join('aulas', 'prestamos.id_aula', '=' , 'aulas.id')
         ->join('licenciaturas', 'prestamos.id_licenciatura', '=' , 'licenciaturas.id')
         ->join('insumos', 'prestamos.id_insumo', '=' , 'insumos.id')
-        ->join('horas', 'prestamos.id_hora', '=' , 'horas.id')
         ->select('nom_solicitante','no_cuenta','telefono','unidad_aprendizaje','profesor','aulas.nombre as aula', 'licenciaturas.nombre as licenciatura', 'insumos.nombre as insumo', 'fecha_solicitud', 'fecha_entrega')
         ->whereDate('fecha_solicitud', '>=','2023-07-01')
         ->whereDate('fecha_solicitud', '<=','2024-02-01')

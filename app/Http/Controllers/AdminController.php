@@ -8,7 +8,7 @@ use App\Models\Prestamo;
 use App\Models\Insumo;
 
 class AdminController extends Controller{
-    public function registros(){
+    public function registros(Request $req){
         $registros = DB::table('prestamos')
         ->join('aulas', 'prestamos.id_aula', '=' , 'aulas.id')
         ->join('licenciaturas', 'prestamos.id_licenciatura', '=' , 'licenciaturas.id')
@@ -34,6 +34,10 @@ class AdminController extends Controller{
     public function form_altas() {
 
         return view('form_altas');
+    }
+    public function registrar() {
+
+        return view('auth/register');
     }
     function guardar(Request $request){
         $this->validate($request, [
